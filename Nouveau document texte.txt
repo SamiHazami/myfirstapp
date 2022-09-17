@@ -1,0 +1,210 @@
+import {useEffect} from "react";
+import { Route, Routes, useMatch, useNavigate } from 'react-router-dom';
+import Welcome from "./Component/Welcome";
+import logo from './logo.svg';
+/////////////////////////////////////////////////////////////////
+const App = () => {
+  return (
+    <>
+      <h2>Hello from my first component !!</h2>
+    </>
+  );
+ };
+ export default App;
+//////////////////////////////////////////////////////////
+ /*export const MyFirstComponent = () => {
+  return (
+    <>
+      <h2>Hello from my first component !!</h2>
+    </>
+  );
+ };
+//////////////////////////////////////////////////////
+export const MySecondComponent = () => {
+  return (
+    <>
+      <h2>Hello from my second component!! </h2>
+    </>
+  );
+ };
+///////////////////////////////////////////////////// 
+import MyFirstComponent from "./MyFirstComponent";
+const App = () => (
+<> 
+  
+   <MyFirstComponent />
+   
+ </>
+);
+export default App;
+///////////////////////////////////////////////////
+/*function  ActionLink () {
+  function  handleClick (e) {
+    e.preventDefault();
+    alert ("I'm an alert")
+  };
+ 
+return (
+    <a href="/" onClick={handleClick}>
+      Click me
+    </a>
+  );
+ };
+export default ActionLink*/
+/*class Welcome extends React.Component {
+ state = {
+   name: "Sara"
+ };
+ handleClick=()=>this.setState({name:'Arya'})
+ render() {
+   return (
+    <>
+    <h1>hello {this.state.name}</h1>;
+    <button onClick={this.handleClick}> ClickMe</button>
+    </>
+   )   
+ }
+}
+export default Welcome;*/
+/*const MyFunctionComponent = () => {
+  // setting the state hooks
+  const [name, setName] = useState("Arya Stark");
+  return (
+    <div>
+      <p>hello my name is {name}</p>
+    </div>
+  );
+ };
+ export default MyFunctionComponent ;*/
+ /*const MyFunctionComponent = props => {
+  // declaring the state hooks
+  const [name, setName] = useState("Arya Stark");
+  // here we use the setter to change the content of the name state
+  const handleClick = () => setName('Tyron Lanyster')
+  return (
+    <div>
+      {/* here we use the getter to get the state value }
+      /*<p>hello my name is {name}</p>
+      <button onClick={handleClick}>Click if you want to give the crown to Tyron Lanyster</button>
+    </div>
+  );
+ };
+ export default MyFunctionComponent;*/
+ /*function App({ date }) {
+  function updateCount(byValue) {
+    const [currentDate, setCurrentDate] = useState(new Date());
+    const [count, setCount] = useState(0);
+    setCount(count + byValue);
+    setCurrentDate(new Date());
+  }
+ 
+  function formatDate() {
+    const hour = currentDate.getHours();
+    const minute = currentDate.getMinutes();
+    const second = currentDate.getSeconds();
+ 
+    return `${hour}:${minute}:${second}`;
+  }
+ 
+  const prettyDate = formatDate();
+ 
+  return (
+    <div className="App">
+      <h2>
+        You clicked {count} times, last time at {prettyDate}!
+      </h2>
+ 
+      <button onClick={() => updateCount(-1)}>Decrement</button>
+      <button onClick={() => updateCount(1)}>Increment</button>
+    </div>
+  );
+ };
+
+export default App;*/
+/*const Home = () => {
+  const navigate = useNavigate();
+  return (
+    <div>
+      <h1>
+        Home page
+      </h1>
+      {/*
+      When we click this button the navigate function will change the url to
+      `/profile` and render the profile component
+       }
+      /*<button onClick={() => navigate('/profile')}>Navigate to Profile </button>
+    </div>
+  )
+ }
+ const Profile = () => {
+  const navigate = useNavigate();
+  const [timer, setTimer] = useState(0)
+  useEffect(() => {
+    setInterval(() => {
+      setTimer(timer + 1)
+    }, 1000);
+  })
+  useEffect(() => {
+    setTimeout(() => {
+      navigate('/')
+    }, 5000);
+  }, [])
+  return (
+    <div>
+      <h1>Profile Page</h1>
+      <p>
+        Count down: <span>{timer}</span>
+      </p>
+    </div>
+  )
+ }
+ function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route index path='/profile' element={<Profile />}></Route>
+      </Routes>
+    </div>
+  );
+ } 
+ export default App;*/
+ /*const Home = () => {
+  const navigate = useNavigate();
+  return (
+    <div>
+      <h1>
+        Home page
+      </h1>
+      <button onClick={() => navigate('/profile/John')}>Navigate to Profile </button>
+    </div>
+  )
+ }
+ const Profile = () => {
+  const match = useMatch('/profile/:name');
+  useEffect(() => {
+    console.log("🚀 ~ file: App.js ~ line 23 ~ Profile ~ params", match)
+ 
+  })
+  return (
+    <div>
+      <h1>Profile Page</h1>
+      <p>
+        this page is for {match.params.name}
+      </p>
+    </div>
+  )
+ }
+ function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route index path='/profile/:name' element={<Profile />}></Route>
+      </Routes>
+    </div>
+  );
+ }
+ 
+ export default App;*/
+
